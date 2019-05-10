@@ -164,6 +164,8 @@
                     })
     </script>
     
-   
+       {{-- PACKAGES --}}
+    <!--Flashy -->
+    @include('flashy::message')
 </body>
 </html>

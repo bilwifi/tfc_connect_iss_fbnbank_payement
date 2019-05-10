@@ -10,6 +10,7 @@ use App\DataTables\Comptabilite\ListeAuditoiresDataTable;
 use App\DataTables\Comptabilite\ListeEtudiantByAuditoireDataTable;
 use App\Models\Auditoire;
 use App\Models\Etudiant;
+use Flashy;
 
 class DashboardController extends Controller
 {
@@ -48,6 +49,9 @@ class DashboardController extends Controller
     	$etudiant->statut = $etudiant->statut == 0 ? 1 : 0;	
     	$etudiant->save();
     	// Flashy
+
+        Flashy::info("L'étudiant est autorisé en s'enrôler avec succès");
+
     	return redirect()->back();
     }
     /*
@@ -69,11 +73,8 @@ class DashboardController extends Controller
                                     'commentaire' => $request->Commentaire,
                                 ]); 
         
-          //---------------------------------------------------------------
-         //
-        // AJOUT DE FLASHY
-       //------------------------------------------------------------------- 
-        // Flashy::success('Etudiant ajouter avec succès');
+  
+        Flashy::success('Etudiant ajouté avec succès');
         return redirect()->back();
     }
     /*
@@ -87,11 +88,8 @@ class DashboardController extends Controller
                                     'commentaire' => $request->data_Commentaire,
                                 ]);
         
-          //---------------------------------------------------------------
-         //
-        // AJOUT DE FLASHY
-       //------------------------------------------------------------------- 
-        // Flashy::success('Etudiant ajouter avec succès');
+
+        Flashy::success('Informattion modifiée avec succès');
         return redirect()->back();
     }
 }

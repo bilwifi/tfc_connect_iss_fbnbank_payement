@@ -11,6 +11,7 @@ use App\DataTables\Section\BilanDataTable;
 use App\Models\Auditoire;
 use App\Models\Etudiant;
 use App\Models\Enrole;
+use Flashy;
 class DashboardController extends Controller
 {
     /**
@@ -57,6 +58,7 @@ class DashboardController extends Controller
             'idusers' => 1,
         ]);  
         // Flashy
+        Flashy::success("L'étudiant a été enrôler avec succès");
         return redirect()->back();
     }
     /*
@@ -82,7 +84,8 @@ class DashboardController extends Controller
     */
     public function destroyEnrolement(Enrole $enrole){
         Enrole::where('idenroles',$enrole->idenroles)->delete();
-        return back();
+        Flashy::info("L'étudiant est retiré aux enrôlés avec succès");
+        return redirect()->back();
     }
 
 
