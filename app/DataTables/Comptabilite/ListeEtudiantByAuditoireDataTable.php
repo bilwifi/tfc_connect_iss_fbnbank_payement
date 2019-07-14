@@ -17,19 +17,23 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
     {
         return datatables($query)
             ->addColumn('action', function($query){
-                if( $query->statut == 0 ){
+                if( $query->statut == 1 ){
                      $class = "success";
                      $incon = "<i class='fas fa-check-circle'></i>";
-                     $toltip = "Autoriser l'étudiant à s'enrôler ";
+
+                     $toltip = "Démettre l'étudiant à l'enrôlement ";
+
                 }else{
                      $class = "danger";
                      $incon = "<i class='fas fa-times-circle' ></i>";
-                     $toltip = "Démettre l'étudiant à l'enrôlement ";
+
+                     $toltip = "Autoriser l'étudiant à s'enrôler ";
                 }
                 $btnCommentaire = !empty(trim($query->commentaire)) ? "" : "disabled";
-                $commentaire = '<button type="button" class="btn  btn-info" data-toggle="popover" title="Etudiant : '.$query->lib.'" data-content="'.$query->commentaire.'" '.$btnCommentaire.'><span class= "fas fa-eye"></span></button>';
+                // $commentaire = '<button type="button" class="btn  btn-info" data-toggle="popover" title="Etudiant : '.$query->lib.'" data-content="'.$query->commentaire.'" '.$btnCommentaire.'><span class= "fas fa-eye"></span></button>';
+                $commentaire ='';
 
-                $class = $query->statut == 0 ? "success" : "danger";
+                $class = $query->statut == 0 ? "danger" : "success";
                 $txt = $query->statut == 0 ? "<i class='fas fa-check-circle'></i>" : "<i class='fas fa-times-circle' ></i>";
                 return 
                      '<a href="'.route('comptabilite.autoriseStudent',$query->idetudiants).'" class="btn btn-'.$class.'" data-toggle="tooltip" data-placement="right" title="'.$toltip.'">'.$incon.'</a>'

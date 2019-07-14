@@ -49,8 +49,10 @@ class DashboardController extends Controller
     	$etudiant->statut = $etudiant->statut == 0 ? 1 : 0;	
     	$etudiant->save();
     	// Flashy
+       $etudiant->statut == 1 ?
+        Flashy::info("L'étudiant est autorisé en s'enrôler avec succès")
+        : Flashy::info("L'étudiant n'est plus autorisé en s'enrôler");
 
-        Flashy::info("L'étudiant est autorisé en s'enrôler avec succès");
 
     	return redirect()->back();
     }
