@@ -19,19 +19,15 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
             ->addColumn('action', function($query){
                 if( $query->statut == 0 ){
                      $class = "success";
-                     $incon = "<i class='fas fa-check-circle'></i> Enrôler";
-                     $toltip = "Enrôler l'étudiant";
+                     $incon = "<i class='fas fa-eye'></i> Afficher";
+                     $toltip = "Afficher les reçus";
                 }else{
                      $class = "danger";
                      $incon = "<i class='fas fa-times-circle' ></i> Démettre";
                      $toltip = "Retirer à la liste des enrôlés";
                 }
-                $btnCommentaire = !empty(trim($query->commentaire)) ? "" : "disabled";
-                $commentaire = '<button type="button" class="btn  btn-info" data-toggle="popover" title="Etudiant : '.$query->lib.'" data-content="'.$query->commentaire.'" '.$btnCommentaire.'><span class= "fas fa-eye"></span></button>';
-                return $commentaire
-                .' '.
-                 '<a href="'.route('section.enrolerEtudiant',$query->idetudiants).'" class="btn btn-'.$class.' data-toggle="tooltip" data-placement="right" title="'.$toltip.'">'.$incon.'</a>'
-                
+                return '<a href="'.route('section.payement',$query->idetudiants).'" class="btn btn-'.$class.' data-toggle="tooltip" data-placement="right" title="'.$toltip.'">'.$incon.'</a>'
+
                 ;
 
             });
@@ -45,7 +41,7 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
      */
     public function query(Etudiant $model)
     {
-        return $model::EtudiantParAuditoire($this->idauditoires)->ProfilEtudiant()->EtudiantActif()->EtudiantNonEnroles()
+        return $model::EtudiantParAuditoire($this->idauditoires)->ProfilEtudiant()->EtudiantActif()
                     ->get([
                         'etudiants.idetudiants',
                         'matricule',
@@ -85,16 +81,16 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
             'postnom',
             'prenom',
             'frais',
-            'lib'=>[
-                        'name'=>'lib',
-                        'data' => 'lib',
-                        'title' => 'Profil',
-                        'searchable' => false,
-                        'orderable' => false,
-                        // 'render' => 'pap',
-                        'exportable' => true,
-                        'printable' => true,
-                    ],
+            // 'lib'=>[
+            //             'name'=>'lib',
+            //             'data' => 'lib',
+            //             'title' => 'Profil',
+            //             'searchable' => false,
+            //             'orderable' => false,
+            //             // 'render' => 'pap',
+            //             'exportable' => true,
+            //             'printable' => true,
+            //         ],
             // 'commentaire'=>[
             //             'name'=>'commentaire',
             //             'data' => 'commentaire',
@@ -115,7 +111,7 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
             //             'exportable' => true,
             //             'printable' => true,
             //         ],
-           
+
         ];
     }
 

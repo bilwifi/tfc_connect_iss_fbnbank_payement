@@ -1,5 +1,6 @@
 <?php
-
+use App\Models\Etudiant;
+use App\Models\Payement;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::get('/fbnbank', function () {
 });
 
 
+
 Route::prefix('comptabilite')->group(function(){
 	Route::name('comptabilite.')->group(function () {
 		Route::get('/','Comptabilite\DashboardController@index')->name('index');
@@ -47,7 +49,11 @@ Route::prefix('section')->group(function(){
 		Route::get('/enrolerEtudiant/{etudiant}','Section\DashboardController@enrolerEtudiant')->name('enrolerEtudiant');
 		Route::get('/destroyEnrolement/{enrole}','Section\DashboardController@destroyEnrolement')->name('!enrolerEtudiant');
 		Route::get('enroles/auditoire/{auditoire}','Section\DashboardController@getListStudentEnroler')->name('getListStudentEnroles');
-		Route::get('bilan','Section\DashboardController@getBilan')->name('getBilan');
+        Route::get('bilan','Section\DashboardController@getBilan')->name('getBilan');
+        Route::get('/etudiants/{etudiant}/frais', function (Etudiant $etudiant) {
+            $payements = Payement::join('etudiants', 'etudiants.idetudiants', '=', 'payements.id_etudiant')->where("payements.id_etudiant",$etudiant->idetudiants)->get();
+            return view('list_frais',compact('payements','etudiant'));
+        })->name('payement');
 		// Route::post('/createEtudiant','Section\DashboardController@createEtudiant')->name('createEtudiant');
 		// Route::get('/createEtudiant',function(){return redirect()->back();});
 		// Route::post('/updateEtudiant','Section\DashboardController@updateEtudiant')->name('updateEtudiant');
