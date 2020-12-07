@@ -20,12 +20,16 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/fbnbank', function () {
+    return view('auth.custom_login2');
+});
+
 
 Route::prefix('comptabilite')->group(function(){
 	Route::name('comptabilite.')->group(function () {
 		Route::get('/','Comptabilite\DashboardController@index')->name('index');
 		Route::get('/auditoire/{auditoire}','Comptabilite\DashboardController@getListStudent')->name('getListStudent');
-		
+
 		Route::get('/autorise/{etudiant}','Comptabilite\DashboardController@autoriseStudent')->name('autoriseStudent');
 		Route::post('/createEtudiant','Comptabilite\DashboardController@createEtudiant')->name('createEtudiant');
 		Route::get('/createEtudiant',function(){return redirect()->back();});
@@ -39,7 +43,7 @@ Route::prefix('section')->group(function(){
 		Route::get('/','Section\DashboardController@index')->name('index');
 		Route::get('/liste-auditoires','Section\DashboardController@getlistAuditoires')->name('getListAuditoires');
 		Route::get('/auditoire/{auditoire}','Section\DashboardController@getListStudent')->name('getListStudent');
-		
+
 		Route::get('/enrolerEtudiant/{etudiant}','Section\DashboardController@enrolerEtudiant')->name('enrolerEtudiant');
 		Route::get('/destroyEnrolement/{enrole}','Section\DashboardController@destroyEnrolement')->name('!enrolerEtudiant');
 		Route::get('enroles/auditoire/{auditoire}','Section\DashboardController@getListStudentEnroler')->name('getListStudentEnroles');

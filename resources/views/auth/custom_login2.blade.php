@@ -71,8 +71,8 @@
   <body class="text-center">
     <form class="form-signin" method="POST" action="{{ route('login') }}">
       @csrf
-      <img class="mb-4" src="{{ asset('img/logo-iss.jpeg') }}" alt="" width="72" height="72">
-      <h5 class="h5 mb-5 font-weight-normal">ISS-KIN</h5>
+      <img class="mb-4" src="{{ asset('img/Logo-fbnbank-bizcongo-banque.jpg') }}" alt="" width="72" height="72">
+      <h5 class="h5 mb-5 font-weight-normal">FBN BANK</h5>
       @include('partials._msgFlash')
       <label for="username" class="sr-only">Pseudo</label>
       <input type="input" id="username" name="username" class="form-control" placeholder="Pseudo" required autofocus>
@@ -80,11 +80,11 @@
       <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Mot de passe" required>
       <div class="checkbox mb-3">
         <label>
-          <a href="/fbnbank">Se connecter à fbn bank</a>
+            <a href="/login">Se connecter à iss kin</a>
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
-      <p class="mt-5 mb-3 text-muted">&copy;{{ date('Y') }} | ISS-KIN </p>
+      <p class="mt-5 mb-3 text-muted">&copy; {{ date('Y') }} | ISS-KIN </p>
     </form>
   </body>
 

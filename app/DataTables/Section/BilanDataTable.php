@@ -77,33 +77,33 @@ class BilanDataTable extends DataTable
                         // 'render' => 'pap',
                         'exportable' => true,
                         ],
-            "nbrEtudiantEnroles"=>[
-                        'name'=>'nbrEtudiantEnroles',
-                        'data' => 'nbrEtudiantEnroles',
-                        'title' => 'Enrôlés',
-                        'searchable' => false,
-                        'orderable' => false,
-                        // 'render' => 'pap',
-                        'exportable' => true,
-                        ],
-            "nbrEtudiantOrdinaire"=>[
-                        'name'=>'nbrEtudiantOrdinaire',
-                        'data' => 'nbrEtudiantOrdinaire',
-                        'title' => 'Ordinaires',
-                        'searchable' => false,
-                        'orderable' => false,
-                        // 'render' => 'pap',
-                        'exportable' => true,
-                        ],
-            "nbrEtudiantAyantDroit"=>[
-                        'name'=>'nbrEtudiantAyantDroit',
-                        'data' => 'nbrEtudiantAyantDroit',
-                        'title' => 'Ayant Droits',
-                        'searchable' => false,
-                        'orderable' => false,
-                        // 'render' => 'pap',
-                        'exportable' => true,
-                        ],      
+            // "nbrEtudiantEnroles"=>[
+            //             'name'=>'nbrEtudiantEnroles',
+            //             'data' => 'nbrEtudiantEnroles',
+            //             'title' => 'Enrôlés',
+            //             'searchable' => false,
+            //             'orderable' => false,
+            //             // 'render' => 'pap',
+            //             'exportable' => true,
+            //             ],
+            // "nbrEtudiantOrdinaire"=>[
+            //             'name'=>'nbrEtudiantOrdinaire',
+            //             'data' => 'nbrEtudiantOrdinaire',
+            //             'title' => 'Ordinaires',
+            //             'searchable' => false,
+            //             'orderable' => false,
+            //             // 'render' => 'pap',
+            //             'exportable' => true,
+            //             ],
+            // "nbrEtudiantAyantDroit"=>[
+            //             'name'=>'nbrEtudiantAyantDroit',
+            //             'data' => 'nbrEtudiantAyantDroit',
+            //             'title' => 'Ayant Droits',
+            //             'searchable' => false,
+            //             'orderable' => false,
+            //             // 'render' => 'pap',
+            //             'exportable' => true,
+            //             ],
             // 'statut'=>[
             //             'name'=>'statut',
             //             'data' => 'statut',
@@ -114,7 +114,7 @@ class BilanDataTable extends DataTable
             //             'exportable' => true,
             //             'printable' => true,
             //         ],
-           
+
         ];
     }
         protected function getBuilderParameters(){
@@ -140,7 +140,7 @@ class BilanDataTable extends DataTable
                                 'extend' => $type,
                                 'filename' => 'Bilan_Enrôlement',
                                 'title' => 'Bilan enrôlement',
-                                // 'message' => 
+                                // 'message' =>
                                 'text' => $name,
                                 'exportOptions' => [
                                                     'columns' => ':visible'

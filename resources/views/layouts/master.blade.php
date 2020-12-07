@@ -19,7 +19,7 @@
         <!-- Custom CSS -->
     <link href="{{ asset('bootstrap/icons/font-awesome/css/fontawesome-all.css') }}" rel="stylesheet">
      <!-- MORRIS CHART STYLES-->
-    
+
         <!-- CUSTOM STYLES-->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
     @yield('stylesheet')
@@ -50,34 +50,34 @@
          {{--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button> --}}
-                <a class="navbar-brand mx-auto d-block" href="{{ route('home') }}">ISPT - KIN</a> 
+                <a class="navbar-brand mx-auto d-block" href="{{ route('home') }}">ISS - KIN</a>
             </div>
             <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">
-            <h2 class="badge badge-info">{{ \App\Http\Controllers\Helper::getUserRole() }}</h2>   
-            <span id="date_heure"></span> &nbsp; 
+            <h2 class="badge badge-info">{{ \App\Http\Controllers\Helper::getUserRole() }}</h2>
+            <span id="date_heure"></span> &nbsp;
             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="btn btn-danger square-btn-adjust">Déconnexion</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
             </div>
-        </nav>   
+        </nav>
            <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side sidebar-nav" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav " id="main-menu">
     				<li class="text-center mx-auto d-block sidebar-item">
-                        <img style="max-width: 60%" src="{{ asset('/img/logoIspt.gif') }}" class="user-image img-responsive img-fluid"/>
+                        <img style="max-width: 60%" src="{{ asset('/img/logo-iss.jpeg') }}" class="user-image img-responsive img-fluid"/>
     				</li>
                     <li>
                         <a class="sidebar-link has-arrow waves-effect waves-dark"  href="{{ route('home') }}"><i class="fas fa-tachometer-alt fa-2x"></i> Tableau de bord</a>
                     </li>
                     <li>
-                        <a class="sidebar-link has-arrow waves-effect waves-dark"  href="{{ route('section.getListAuditoires') }}"><i class=" fas fa-th-list fa-2x"></i> Enrôlements</a>
+                        <a class="sidebar-link has-arrow waves-effect waves-dark"  href="{{ route('section.getListAuditoires') }}"><i class=" fas fa-th-list fa-2x"></i> Listes <br></a>
                     </li>
                     <li>
-                        <a class="sidebar-link has-arrow waves-effect waves-dark"  href="#"><i class=" fas fa-user fa-2x"></i> Mon profil</a>
+                        {{-- <a class="sidebar-link has-arrow waves-effect waves-dark"  href="#"><i class=" fas fa-user fa-2x"></i> Mon profil</a> --}}
                     </li>
-                   
+
 				{{-- 	<!-- Multi link -->
                     <li>
                         <a href="#"><i class="fa fa-sitemap fa-2x"></i> Enrôlements<span class="fa arrow"></span></a>
@@ -102,24 +102,24 @@
                                     </li>
 
                                 </ul>
-                               
+
                             </li>
                         </ul>
-                    </li>  --}} 
+                    </li>  --}}
                 </ul>
-               
+
             </div>
-            
-        </nav>  
+
+        </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
-          
+
                      {{-- <a href=""><i class="fas fa-arrow-circle-left fa-2x"></i></a>    --}}
 
             <div id="page-inner" style="background-color: : #F3F3F3">
                {{--  <div class="row">
                     <div class="col-md-12">
-                     <h2 class="btn btn-success">{{ \App\Http\Controllers\Helper::getUserRole() }}</h2>   
+                     <h2 class="btn btn-success">{{ \App\Http\Controllers\Helper::getUserRole() }}</h2>
                         <h5>home Jhon Deo , Love to see you back. </h5>
                     </div>
                 </div> --}}
@@ -127,7 +127,7 @@
                 @yield('content')
                  <!-- /. ROW  -->
             </div>
-               
+
             @include('layouts.partials._footer')
         </div>
              <!-- /. PAGE INNER  -->
@@ -163,7 +163,7 @@
                       $('[data-toggle="popover"]').popover()
                     })
     </script>
-    
+
        {{-- PACKAGES --}}
     <!--Flashy -->
     @include('flashy::message')

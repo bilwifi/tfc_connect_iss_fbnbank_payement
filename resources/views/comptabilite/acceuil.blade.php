@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="row">
         <div class="col-md-12">
-         <h2 class="badge badge-pill badge-info">Comptabilité | ISPT-KIN</h2>   
+         <h2 class="badge badge-pill badge-info">FBN BANK | ISS KIN</h2>
         </div>
     </div>
 	<div class="card bg-light mb-3">
@@ -13,7 +13,7 @@
 		{!!$dataTable->table() !!}
 	  </div>
 	</div>
-</div>	
+</div>
 @stop
 @push('scripts')
 {!!$dataTable->scripts() !!}
