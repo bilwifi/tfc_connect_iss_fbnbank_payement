@@ -61,7 +61,7 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
             'nom',
             'postnom',
             'prenom',
-            'frais',
+            // 'frais',
             'lib'=>[
                         'name'=>'lib',
                         'data' => 'lib',
