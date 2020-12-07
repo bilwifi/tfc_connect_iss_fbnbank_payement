@@ -41,7 +41,7 @@
 
                     <tr>
                         <th scope="row"> Commentaire</th>
-                        <td>{{$payement->commentaire ? $payement->commentaire :"----------"}}</td>
+                        <td>{{!empty($payement->comment) ? $payement->comment : "----------"}}</td>
                         <th scope="row"> Date</th>
                         <td>{{$payement->d}}</td>
                     </tr>

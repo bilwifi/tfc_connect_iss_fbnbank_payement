@@ -17,33 +17,10 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
     {
         return datatables($query)
             ->addColumn('action', function($query){
-                if( $query->statut == 1 ){
-                     $class = "success";
-                     $incon = "<i class='fas fa-check-circle'></i>";
+           return
+                     '<a href="'.route('comptabilite.add_payement',$query->idetudiants).'" class="btn btn-success"><span class= "fas fa-plus"></span></a>'
 
-                     $toltip = "Démettre l'étudiant à l'enrôlement ";
-
-                }else{
-                     $class = "danger";
-                     $incon = "<i class='fas fa-times-circle' ></i>";
-
-                     $toltip = "Autoriser l'étudiant à s'enrôler ";
-                }
-                $btnCommentaire = !empty(trim($query->commentaire)) ? "" : "disabled";
-                // $commentaire = '<button type="button" class="btn  btn-info" data-toggle="popover" title="Etudiant : '.$query->lib.'" data-content="'.$query->commentaire.'" '.$btnCommentaire.'><span class= "fas fa-eye"></span></button>';
-                $commentaire ='';
-
-                $class = $query->statut == 0 ? "danger" : "success";
-                $txt = $query->statut == 0 ? "<i class='fas fa-check-circle'></i>" : "<i class='fas fa-times-circle' ></i>";
-                return 
-                     '<a href="'.route('comptabilite.autoriseStudent',$query->idetudiants).'" class="btn btn-'.$class.'" data-toggle="tooltip" data-placement="right" title="'.$toltip.'">'.$incon.'</a>'
-
-                     .'  '.
-                     $commentaire
-                     .'  '.
-                     '<button type="button" class="edit-modal btn btn-info" data-toggle="modal" data-target="#editModal"  data-info="'.$query->idetudiants.','.$query->matricule.','.$query->nom.','.$query->postnom.','.$query->prenom.','.$query->frais.','.$query->idprofils.','.$query->commentaire.'"><span class= "fas fa-edit"></span></button>'
-
-                     ;
+                     .'     <a href="'.route('comptabilite.payement',$query->idetudiants).'" class="edit-modal btn btn-info" ><span class= "fas fa-eye"></span></a>';
             });
     }
 
@@ -116,7 +93,7 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
             //             'exportable' => true,
             //             'printable' => true,
             //         ],
-           
+
         ];
     }
 

@@ -36,7 +36,25 @@ Route::prefix('comptabilite')->group(function(){
 		Route::post('/createEtudiant','Comptabilite\DashboardController@createEtudiant')->name('createEtudiant');
 		Route::get('/createEtudiant',function(){return redirect()->back();});
 		Route::post('/updateEtudiant','Comptabilite\DashboardController@updateEtudiant')->name('updateEtudiant');
-		Route::get('/updateEtudiant',function(){return redirect()->back();});
+        Route::get('/updateEtudiant',function(){return redirect()->back();});
+
+        Route::get('/payement/{etudiant}',function(Etudiant $etudiant){return view('comptabilite.add_payement',compact('etudiant'));})->name('add_payement');
+        Route::post('/payement/{etudiant}',function(Etudiant $etudiant){
+            Payement::create([
+                "id_etudiant" => $etudiant->idetudiants,
+                "montant" => request()->montant,
+                "devise" => request()->devise,
+                "motif" => request()->motif,
+                "commentaire" => request()->commentaire,
+                 ]);
+
+            return redirect()->route('comptabilite.payement',$etudiant->idetudiants);
+        });
+
+        Route::get('/etudiants/{etudiant}/frais', function (Etudiant $etudiant) {
+            $payements = Payement::join('etudiants', 'etudiants.idetudiants', '=', 'payements.id_etudiant')->where("payements.id_etudiant",$etudiant->idetudiants)->orderBy("id","DESC")->get();
+            return view('list_frais',compact('payements','etudiant'));
+        })->name('payement');
 
 	});
 });
