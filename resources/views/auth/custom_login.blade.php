@@ -10,6 +10,11 @@
     <meta name="description" content="">
     <meta name="author" content="PENIEL WIFI">
 
+    <meta property="og:title" content="CONNECT ISS-FBNBANK">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://ramazani-iss-fbnbank.herokuapp.com/login">
+    <meta property="og:image" content="http://ramazani-iss-fbnbank.herokuapp.com/img/og.png" />
+
 
     <title>CONNECT ISS-FBNBANK</title>
 

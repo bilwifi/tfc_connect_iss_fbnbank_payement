@@ -11,6 +11,11 @@
     <meta name="author" content="PENIEL WIFI">
     <title>CONNECT ISS-FBNBANK</title>
 
+    <meta property="og:title" content="CONNECT ISS-FBNBANK">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://ramazani-iss-fbnbank.herokuapp.com/login">
+    <meta property="og:image" content="http://ramazani-iss-fbnbank.herokuapp.com/img/og.png" />
+
     <!-- Bootstrap core CSS -->
     <!-- Custom CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

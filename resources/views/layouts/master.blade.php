@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Bil Wifi" content="{{ config('app.name') }} by KinDev">
+    <meta property="og:title" content="CONNECT ISS-FBNBANK">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://ramazani-iss-fbnbank.herokuapp.com/login">
+    <meta property="og:image" content="http://ramazani-iss-fbnbank.herokuapp.com/img/og.png" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href={{ asset('favicon.ico') }}>
     <!-- CSRF Token -->
