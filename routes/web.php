@@ -45,7 +45,7 @@ Route::prefix('comptabilite')->group(function(){
                 "montant" => request()->montant,
                 "devise" => request()->devise,
                 "motif" => request()->motif,
-                "commentaire" => request()->commentaire,
+                "comment" => request()->commentaire,
                  ]);
 
             return redirect()->route('comptabilite.payement',$etudiant->idetudiants);

@@ -9,6 +9,6 @@ class Payement extends Model
     //
     const CREATED_AT = 'd';
     protected $fillable = [
-        'id_etudiant','montant','motif','devise','commentaire',
+        'id_etudiant','montant','motif','devise','comment',
     ];
 }
