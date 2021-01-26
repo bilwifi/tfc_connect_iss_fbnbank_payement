@@ -41,8 +41,7 @@ class ListeEtudiantByAuditoireDataTable extends DataTable
      */
     public function query(Etudiant $model)
     {
-        return $model::EtudiantParAuditoire($this->idauditoires)->ProfilEtudiant()->EtudiantActif()
-                    ->get([
+        return $model::EtudiantParAuditoire($this->idauditoires)->ProfilEtudiant()->get([
                         'etudiants.idetudiants',
                         'matricule',
                         'nom',

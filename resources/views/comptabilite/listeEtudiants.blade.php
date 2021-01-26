@@ -51,8 +51,8 @@
 	            <label for="data_Commentaire" class=" control-label col-form-label">Commentaire</label>
 	            <div class="col-12">
 	                <textarea class="form-control" name="data_Commentaire" id="data_Commentaire" >
-	                	
-	                </textarea> 
+
+	                </textarea>
 	            </div>
 	        </div>
 
@@ -127,8 +127,8 @@
 	            <label for="Commentaire" class=" control-label col-form-label">Commentaire</label>
 	            <div class="col-12">
 	                <textarea class="form-control" name="Commentaire" id="Commentaire" maxlength="65" >
-	                	
-	                </textarea> 
+
+	                </textarea>
 	            </div>
 	        </div>
 
@@ -138,18 +138,18 @@
           <button type="submit" class="save btn btn-primary">Enregistrer</button>
         </div>
         </form>
-        
+
       </div>
     </div>
   </div>
 </div>
-</div>	
+</div>
 @stop
 @push('scripts')
 {!!$dataTable->scripts() !!}
 
 <script type="text/javascript">
-  
+
   {{-- Ajout étudiant formulaire --}}
   $(document).on('click', '.addModal', function() {
       $('#msgErrors').html('');
@@ -203,7 +203,7 @@
       $('#data_frais').val('');
       $('#data_profil').val('');
       $('#data_Commentaire').val('');
-     
+
       }
 
 
